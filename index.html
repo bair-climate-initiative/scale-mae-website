@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Scale-MAE: A Scale-Aware Masked Autoencoder for Multiscale Geospatial Representation Learning.">
+  <meta name="description" content="Scale-MAE: A Scale-Aware Masked Autoencoder for
+  Multiscale Geospatial Representation Learning.">
   <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Scale-MAE</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
@@ -26,242 +25,282 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
+
 <body>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Scale-MAE: A Scale-Aware Masked Autoencoder for Multiscale Geospatial Representation Learning.</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="http://people.eecs.berkeley.edu/~cjrd">Colorado J. Reed*</a><sup>1</sup><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://ritwikgupta.me">Ritwik Gupta*</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://homepage.jackli.org/">Shufan Li*</a><sup>1</sup>,
-            </span>
-            <br>
-            <span class="author-block">
-              <a href="https://www.kitware.com/sarah-brockman/">Sarah Brockman</a><sup>3</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.kitware.com/christopher-funk/">Christopher Funk</a><sup>3</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.kitware.com/brian-clipp/">Brian Clipp</a><sup>3</sup>,
-            </span>
-            <br>
-            <span class="author-block">
-              <a href="https://people.eecs.berkeley.edu/~keutzer">Kurt Keutzer</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/salcandido">Salvatore Candido</a><sup>2</sup>,
-            </span>           
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/matt-uyttendaele-70428262">Matt Uyttendaele</a><sup>2</sup>,
-            </span>    
-            <span class="author-block">
-              <a href="https://people.eecs.berkeley.edu/~trevor">Trevor Darrell</a><sup>1</sup>
-            </span>                             
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Berkeley AI Research, UC Berkeley,</span>
-            <span class="author-block"><sup>2</sup>Meta AI Research</span>
-            <span class="author-block"><sup>3</sup>Kitware</span>
-          </div>
-
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
           <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/pdf/2212.14532.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
+            <h1 class="title is-1 publication-title">Scale-MAE: A Scale-Aware Masked
+              Autoencoder for Multiscale
+              Geospatial Representation Learning.</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="http://people.eecs.berkeley.edu/~cjrd">Colorado J. Reed*</a><sup>1</sup><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://ritwikgupta.me">Ritwik Gupta*</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://homepage.jackli.org/">Shufan Li*</a><sup>1</sup>,
+              </span>
+              <br>
+              <span class="author-block">
+                <a href="https://www.kitware.com/sarah-brockman/">Sarah Brockman</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.kitware.com/christopher-funk/">Christopher Funk</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.kitware.com/brian-clipp/">Brian Clipp</a><sup>3</sup>,
+              </span>
+              <br>
+              <span class="author-block">
+                <a href="https://people.eecs.berkeley.edu/~keutzer">Kurt Keutzer</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/salcandido">Salvatore Candido</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/matt-uyttendaele-70428262">Matt Uyttendaele</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://people.eecs.berkeley.edu/~trevor">Trevor Darrell</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Berkeley AI Research, UC Berkeley,</span>
+              <span class="author-block"><sup>2</sup>Meta AI Research</span>
+              <span class="author-block"><sup>3</sup>Kitware</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2212.14532.pdf"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
                       <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2212.14532"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/bair-climate-initiative/scale-mae"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code and Models</span>
+                    </span>
+                    <span>Paper</span>
                   </a>
-              </span>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2212.14532" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/bair-climate-initiative/scale-mae/"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code and Models</span>
+                  </a>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img src="static/images/scale-teaser.png" height="100%"></img>
-
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="./static/images/scale-teaser.png" height="100%"></img>
+      </div>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Scale-MAE</span> is a pre-trained model for multiscale geospatial data.
+        <span class="dnerf">Scale-MAE</span> is a pre-training method to improve the ability of models to handle
+        multiscale geospatial data.
       </h2>
     </div>
-  </div>
-</section>
+  </section>
 
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Remote sensing imagery provides comprehensive views of the Earth, where different sensors collect complementary data at different spatial scales. Large, pretrained models are commonly finetuned with imagery that is heavily augmented to mimic different conditions and scales, with the resulting models used for various tasks with imagery from a range of spatial scales. Such models overlook scale-specific information in the data. In this paper, we present Scale-MAE, a pretraining method that explicitly learns relationships between data at different, known scales throughout the pretraining process. Scale-MAE pretrains a network by masking an input image at a known input scale, where the area of the Earth covered by the image determines the scale of the ViT positional encoding, not the image resolution. Scale-MAE encodes the masked image with a standard ViT backbone, and then decodes the masked image through a bandpass filter to reconstruct low/high frequency images at lower/higher scales. We find that tasking the network with reconstructing both low/high frequency images leads to robust multiscale representations for remote sensing imagery. Scale-MAE achieves an average of a 5.0% non-parametric kNN classification improvement across eight remote sensing datasets compared to current state-of-the-art and obtains a 0.9 mIoU to 3.8 mIoU improvement on the SpaceNet building segmentation transfer task for a range of evaluation scales.
-          </p>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Remote sensing imagery provides comprehensive views of the Earth, where different sensors collect
+              complementary data at different spatial scales. Large, pretrained models are commonly finetuned with
+              imagery that is heavily augmented to mimic different conditions and scales, with the resulting models used
+              for various tasks with imagery from a range of spatial scales. Such models overlook scale-specific
+              information in the data. In this paper, we present <span class="dnerf">Scale-MAE</span>, a pretraining
+              method that explicitly learns
+              relationships between data at different, known scales throughout the pretraining process. <span
+                class="dnerf">Scale-MAE</span>
+              pretrains a network by masking an input image at a known input scale, where the area of the Earth covered
+              by the image determines the scale of the ViT positional encoding, not the image resolution. <span
+                class="dnerf">Scale-MAE</span>
+              encodes the masked image with a standard ViT backbone, and then decodes the masked image through a
+              bandpass filter to reconstruct low/high frequency images at lower/higher scales. We find that tasking the
+              network with reconstructing both low/high frequency images leads to robust multiscale representations for
+              remote sensing imagery. <span class="dnerf">Scale-MAE</span> achieves an average of a 5.0% non-parametric
+              kNN classification
+              improvement across eight remote sensing datasets compared to current state-of-the-art and obtains a 0.9
+              mIoU to 3.8 mIoU improvement on the SpaceNet building segmentation transfer task for a range of evaluation
+              scales.
+            </p>
+          </div>
         </div>
       </div>
+      <!--/ Abstract. -->
+
     </div>
-    <!--/ Abstract. -->
-
-  </div>
-</section>
+  </section>
 
 
-<section class="section">
-  <div class="container is-max-desktop">
+  <section class="section">
+    <div class="container is-max-desktop">
 
-    <div class="columns is-centered">
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Scale-Aware Laplician Representation Learning</h2>
-          <img src="static/images/explainer.png" >
-        <div class="content has-text-justified">
-          <p>
-            Scale-MAE has two key components: a Ground Sample Distance (GSD) based positional encoding and a multi-band Laplacian-pyramid decoder.
-Unlike typical positional encoding used in vision transformers, the GSD based positional encoding scales in proportion to the area of land in an image covers, regardless of the pixel resolution of the image. The wavelength of sinusoids, in terms of absolute groud distance, is invariant across multiple scales.
-The Laplacian-pyramid decoder reconstruct a laplician representation of the original image, where L1 loss is applied on high-frequency information and L2 loss is applied on low-frequency information. This construction explictly allows the model to learn represnetations of different frequency/scales. 
-          </p>
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Scale-Aware Laplacian Representation Learning</h2>
+          <img src="./static/images/explainer.png">
+          <div class="content has-text-justified">
+            <p>
+              <span class="dnerf">Scale-MAE</span> has two key components: a Ground Sample Distance (GSD) based
+              positional encoding and a
+              multi-band Laplacian-pyramid decoder.
+              Unlike typical positional encoding used in vision transformers, the GSD based positional encoding scales
+              in proportion to the area of land in an image covers, regardless of the pixel resolution of the image.
+              The wavelength of sinusoids, in terms of absolute groud distance, is invariant across multiple scales.
+              The Laplacian-pyramid decoder reconstruct a laplician representation of the original image, where L1
+              loss is applied on high-frequency information and L2 loss is applied on low-frequency information. This
+              construction explictly allows the model to learn represnetations of different frequency/scales.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
+  </section>
 
 
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered" style="width: 100%">
-      <div class="column is-full-width" style="width: 100%">
-        <h2 class="title is-3">Visualizations</h2>
-          <img src="static/images/reconstruction.png" >
-        <div class="content has-text-justified">
-          <p>
-            We provide visualizations of the multi-band reconstruction.         
-           </p>
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Results</h2>
+          <img src="./static/images/knn-results.png">
+          <div class="content has-text-justified">
+            <p>
+              Compared to state-of-the-art remote sensing pre-training methods, <span
+                class="dnerf">Scale-MAE</span>-based represeentations perform better for a kNN classification task on
+              multiple remote sensing datasets. These datasets are collected from different platforms at different
+              ground sample distances.</p>
+          </div>
         </div>
       </div>
-    </div>
-    <!--/ Concurrent Work. -->
+  </section>
 
-  </div>
-</section>
+  <section class="section">
+    <div class="container is-max-desktop">
 
+      <div class="columns is-centered">
 
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a wonderful project called <a href="">SatMAE</a> that also pretrains models for geospatial imagery, particularly multi-modal spatiotemporal data -- check out that project if it fits your use case! Also, Scale-MAE and SatMAE should be able to be combined for multi-scale multi-modal spatiotemporal data, but we haven't tried it yet ourselves. Let us know if you do!
-          </p>
+        <div class="columns is-centered" style="width: 100%">
+          <div class="column is-full-width" style="width: 100%">
+            <h2 class="title is-3">Visualizations</h2>
+            <img src="./static/images/reconstruction.png">
+            <div class="content has-text-justified">
+              <p>
+                While <span class="dnerf">Scale-MAE</span> is not built with the goal of high-fidelity reconstruction,
+                the reconstructions that our method does produce are convincing. Notably, the learned low and high
+                frequency components are visually convincing.
+              </p>
+            </div>
+          </div>
         </div>
+
       </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
-  </div>
-</section>
+  </section>
 
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{reed2022scale,
-      title={Scale-MAE: A Scale-Aware Masked Autoencoder for Multiscale Geospatial Representation Learning},
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered">
+
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">Related Links</h2>
+
+            <div class="content has-text-justified">
+              <p>
+                There's a wonderful project called <a href="">SatMAE</a> that also pretrains models for geospatial
+                imagery, particularly multi-modal spatiotemporal data -- check out that project if it fits your use
+                case! Also, <span class="dnerf">Scale-MAE</span> and SatMAE should be able to be combined for
+                multi-scale multi-modal
+                spatiotemporal data, but we haven't tried it yet ourselves. Let us know if you do!
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{reed2022scale,
+      title=Scale-MAE: A Scale-Aware Masked Autoencoder for Multiscale Geospatial Representation Learning},
       author={Reed, Colorado J and Gupta, Ritwik and Li, Shufan and Brockman, Sarah and Funk, Christopher and Clipp, Brian and Candido, Salvatore and Uyttendaele, Matt and Darrell, Trevor},
       journal={arXiv preprint arXiv:2212.14532},
       year={2022}
     }</code></pre>
-  </div>
-</section>
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="https://arxiv.org/abs/2212.14532">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/bair-climate-initiative/scale-mae" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
     </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This website came from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies project website template</a>.
-          </p>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/abs/2212.14532">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/bair-climate-initiative/scale-mae/" class="external-link"
+          disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This website came from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies project website
+                template</a>.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 </body>
+
 </html>
